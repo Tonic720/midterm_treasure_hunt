@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PokeBallScript : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D coll) {
+    void OnTriggerStay2D(Collider2D coll) {
 
         if (coll.isTrigger != true) {
 

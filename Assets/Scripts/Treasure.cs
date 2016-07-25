@@ -16,8 +16,12 @@ public class Treasure : MonoBehaviour {
 	public Transform doduo;
 	public Transform lake;
 	public Transform charmander;
+    public Transform bulbasuar;
+    public Transform pidgey;
+    public Transform rattata;
+    public Transform poliwag;
 
-	void Update () {
+    void Update () {
 		if ((player.position - maletrainer.transform.position).magnitude < 5f) {
 			gameText.text = "Eevee: Oh no, there's a trainer! He must be here to catch mother! I'd better go the other way!";
 		} else if ((player.position - zubat.transform.position).magnitude < 1f) {
@@ -30,13 +34,31 @@ public class Treasure : MonoBehaviour {
 			gameText.text = "Eevee: Water! Mother likes water. She must be around here somewhere!";
 		} else if ((player.position - charmander.transform.position).magnitude < 1f) {
 			gameText.text = "Charmander: I'm staying far away from the hoard of trainers and you should too. Vaporeon is that way!";
-		} else if ((player.position - transform.position).magnitude < 1f) {
+		}
+          else if ((player.position - bulbasuar.transform.position).magnitude < 1f)
+        {
+            gameText.text = "Bulbasuar: Hey if you need health i saw a potion over there";
+        }
+        else if ((player.position - pidgey.transform.position).magnitude < 1f)
+        {
+            gameText.text = "Pidgey: You're looking for Vaporeon check the lake it's north of here";
+        }
+        else if ((player.position - rattata.transform.position).magnitude < 1f)
+        {
+            gameText.text = "Rattata: I saw Vaporeon at the top of the lake";
+        }
+        else if ((player.position - poliwag.transform.position).magnitude < 1f)
+        {
+            gameText.text = "Poliwag: Vaporeon is on the other side of the lake";
+        }
+        else if ((player.position - transform.position).magnitude < 1f) {
 			gameText.text = "Press [space] to reunite with your mother.";
-			if (Input.GetKeyDown (KeyCode.Space)) {
-				didPlayerWin = true;
-			} else if (didPlayerWin) {
-				gameText.text = "You found Vaporeon before the New Yorkers did!";
-			}
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(3);
+            }
+		} else {
+			gameText.text = "";
 		}
 
 	}

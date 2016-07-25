@@ -12,7 +12,7 @@ public class TrainerAI : MonoBehaviour {
 
     //Bools
     public bool playerSeen = false;
-    public bool lookRight = true;
+   
 
     //References
     public GameObject pokeball;
@@ -23,14 +23,15 @@ public class TrainerAI : MonoBehaviour {
         RangeCheck();
 
         if (target.transform.position.x > transform.position.x) {
-            lookRight = true;
+            
             transform.localScale = new Vector3(1f, 1f, 1f);
 
         }
         if (target.transform.position.x < transform.position.x)
         {
-            lookRight = false;
+           
            transform.localScale = new Vector3(-1f, 1f, 1f);
+            
 
         }
     }
